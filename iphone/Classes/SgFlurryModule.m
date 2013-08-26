@@ -95,6 +95,14 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 //value is true or false
+-(void)setDebugLogEnabled:(id)value
+{
+	ENSURE_SINGLE_ARG(value,NSObject);
+	BOOL yn = [TiUtils boolValue:value];
+	[Flurry setDebugLogEnabled:yn];
+}
+
+//value is true or false
 -(void)logUncaughtExceptions:(id)value
 {
 	ENSURE_SINGLE_ARG(value,NSObject);
