@@ -28,6 +28,10 @@ This option is off by default. When enabled, Flurry will attempt to send session
 
 This option is off by default. When enabled, Flurry will send session data over SSL when the app is paused as well as it normally does when the app is started. This has the potential to prolong the app pause process due to added network latency from secure handshaking and encryption. 
 
+### sg.flurry.setDebugLogEnabled(bool)
+
+Generates debug logs to console 
+
 ### sg.flurry.logUncaughtExceptions(bool)
 
 Logs uncaught exceptions thrown in the objective-c code
