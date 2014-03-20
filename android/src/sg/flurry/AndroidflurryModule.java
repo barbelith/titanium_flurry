@@ -15,6 +15,7 @@ import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 
 import org.appcelerator.titanium.TiContext;
+import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.util.Log;
 //import org.appcelerator.titanium.util.TiConfig;
 
@@ -43,15 +44,15 @@ public class AndroidflurryModule extends KrollModule
     // apiKey is the unique key when for the application on flurry
     @Kroll.method
     public void onStartSession(String apiKey){
-        FlurryAgent.onStartSession(_tiContext.getAndroidContext() , apiKey);
-		Log.d(LCAT, "start context: " + _tiContext.getAndroidContext());
+        FlurryAgent.onStartSession(TiApplication.getInstance().getCurrentActivity() , apiKey);
+		Log.d(LCAT, "start context: " + TiApplication.getInstance().getCurrentActivity());
     }
     
     //Must be called if you want events to be sent
   	@Kroll.method
     public void onEndSession(){      
-        FlurryAgent.onEndSession(_tiContext.getAndroidContext());
-   		Log.d(LCAT, "end context: " + _tiContext.getAndroidContext());
+        FlurryAgent.onEndSession(TiApplication.getInstance().getCurrentActivity());
+   		Log.d(LCAT, "end context: " + TiApplication.getInstance().getCurrentActivity());
     }
 	// ********* Sessions *************
     
@@ -81,6 +82,12 @@ public class AndroidflurryModule extends KrollModule
     public void setCaptureUncaughtExceptions(boolean uncaught){
   		FlurryAgent.setCaptureUncaughtExceptions(uncaught);
    		Log.d(LCAT, "setUseHttps: " + uncaught);
+    }
+    
+  	@Kroll.method
+    public void setLogEnabled(boolean isEnabled){
+  		FlurryAgent.setLogEnabled(isEnabled);
+   		Log.d(LCAT, "setLogEnabled: " + isEnabled);
     }
     // ********* Settings *************
     

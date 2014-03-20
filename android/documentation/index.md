@@ -2,7 +2,7 @@
 
 ## Description
 
-Flurry v3.0.5 for android. Wrapper to the Flurry SDK for android. Refer to the Flurry SDK API for more info.
+Flurry v3.4.0 for android. Wrapper to the Flurry SDK for android. Refer to the Flurry SDK API for more info.
 
 ## Accessing the androidflurry Module
 
@@ -56,6 +56,18 @@ Use this to log the user's gender. Valid inputs are sg.flurry.MALE or sg.flurry.
 
 To disable/enable detailed location reporting even when your app has permission. Enabled by default.
 
+### sg.flurry.setUseHttps(bool)
+
+Enable the use of HTTPS communications.
+
+### sg.flurry.setCaptureUncaughtExceptions(bool)
+
+true to enable or false to disable the ability to catch all uncaught exceptions and have them reported back to Flurry.
+
+### sg.flurry.setLogEnabled(bool)
+
+true to enable or false to disable the internal logging for the Flurry SDK.
+
 ## Constant
 
 ### sg.flurry.MALE
@@ -71,7 +83,7 @@ Used with the setGender function
 Add this to your tiapp.xml
 
 	<modules>
-		<module version="1.2" platform="android">sg.flurry</module>
+		<module platform="android">sg.flurry</module>
 	</modules>
 
 Sample app.js

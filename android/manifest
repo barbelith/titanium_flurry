@@ -1,4 +1,4 @@
-version: 2.0
+version: 2.1
 description: Flurry for android
 author: Tommy Leung
 license: The MIT License (MIT)
@@ -9,5 +9,5 @@ name: androidflurry
 moduleid: sg.flurry
 guid: bdbeae58-dcd9-4460-9e18-367f44b2306c
 platform: android
-minsdk: 3.0.2.GA
+minsdk: 3.2.2.GA
 apiversion: 2
