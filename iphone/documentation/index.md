@@ -2,7 +2,7 @@
 
 ## Description
 
-Flurry v3.0.0 for iPhone/iPad. Wrapper to the Flurry SDK for iPhone/iPad. Refer to the Flurry SDK API for more info.
+Flurry v4.3.2 for iPhone/iPad. Wrapper to the Flurry SDK for iPhone/iPad. Refer to the Flurry SDK API for more info.
 
 ## Accessing the iphoneflurry Module
 
