@@ -2,7 +2,7 @@
 
 ## Description
 
-Flurry v3.4.0 for android. Wrapper to the Flurry SDK for android. Refer to the Flurry SDK API for more info.
+Flurry v4.1.0 for android. Wrapper to the Flurry SDK for android. Refer to the Flurry SDK API for more info.
 
 ## Accessing the androidflurry Module
 

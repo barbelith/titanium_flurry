@@ -44,15 +44,23 @@ public class AndroidflurryModule extends KrollModule
     // apiKey is the unique key when for the application on flurry
     @Kroll.method
     public void onStartSession(String apiKey){
-        FlurryAgent.onStartSession(TiApplication.getInstance().getCurrentActivity() , apiKey);
-		Log.d(LCAT, "start context: " + TiApplication.getInstance().getCurrentActivity());
+        if (TiApplication.getInstance().getCurrentActivity() != null) {
+            FlurryAgent.onStartSession(TiApplication.getInstance().getCurrentActivity() , apiKey);
+    		Log.d(LCAT, "start context: " + TiApplication.getInstance().getCurrentActivity());
+        } else {
+            Log.d(LCAT, "could not start session because there is no current activity");
+        }
     }
     
     //Must be called if you want events to be sent
   	@Kroll.method
     public void onEndSession(){      
-        FlurryAgent.onEndSession(TiApplication.getInstance().getCurrentActivity());
-   		Log.d(LCAT, "end context: " + TiApplication.getInstance().getCurrentActivity());
+        if (TiApplication.getInstance().getCurrentActivity() != null) {
+            FlurryAgent.onEndSession(TiApplication.getInstance().getCurrentActivity());
+       		Log.d(LCAT, "end context: " + TiApplication.getInstance().getCurrentActivity());
+        } else {
+            Log.d(LCAT, "could not end session because there is no current activity");
+        }
     }
 	// ********* Sessions *************
     
